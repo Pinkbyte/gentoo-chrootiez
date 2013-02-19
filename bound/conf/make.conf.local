@@ -1,0 +1,23 @@
+FEATURES="${FEATURES} -stricter test"
+MAKEOPTS="-j9"
+EMERGE_DEFAULT_OPTS="--keep-going --jobs=3"
+GENTOO_MIRRORS="http://mirror.yandex.ru/gentoo-distfiles"
+
+CFLAGS="-O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+CHOST="x86_64-pc-linux-gnu"
+USE="-acpi -alsa -berkdb -crypt -cups -gdbm -gstreamer -gtk -gtk3 -ldap -libnotify -perl -python -static-libs -tiff
+-consolekit -policykit
+mmx sse sse2"
+
+PKGDIR="/bound/packages"
+PORTDIR_OVERLAY=""
+
+VIDEO_CARDS="nvidia"
+INPUT_DEVICES="evdev"
+LINGUAS="ru ru_RU"
+
+USE_PYTHON="2.7"
+PYTHON_TARGETS="python2_7"
+
+# Profile should be DEVELOPER!
