@@ -35,7 +35,7 @@ do
     fi
 done
 
-for d in /proc /sys /dev /dev/pts /dev/shm
+for d in /proc /sys /dev /dev/pts /dev/shm /var/tmp/portage
 do
     mount --bind "$d" $chroot_path"/$d"
 done
@@ -50,7 +50,7 @@ $setarch_wrapper /usr/bin/chroot "$chroot_path" /run_from_chroot "$@"
 #>$chroots_base/$chroot_name.log 2>&1
 info "... exited from chroot"
 
-for d in /dev/shm /dev/pts /dev /sys /proc
+for d in /dev/shm /dev/pts /dev /sys /proc /var/tmp/portage
 do
     umount $chroot_path"/$d"
 done
